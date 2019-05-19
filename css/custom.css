@@ -1,7 +1,7 @@
 body {
 
-color:#f00;
-background-color: #0000ff;
+color:black;
+background-color: gray;
 
 }
 
@@ -57,7 +57,7 @@ ul.disc{
 
 .statement_text {
 
-    background-color: #0f0;
+    background-color: orange;
     padding: 8px;
     margin-top: 20px;
     border: 1px dashed black;
