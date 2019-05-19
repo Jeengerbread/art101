@@ -10,16 +10,12 @@ function preload() {
 
 function setup() {
   createCanvas(710, 200);
-  background(0, 255, 0);
+  background(255);
 }
 
 function mousePressed() {
-  if (yeet.isPlaying()) {
-    // .isPlaying() returns a boolean
-    yeet.pause(); // .play() will resume from .pause() position
-    background(255, 0, 0);
-  } else {
-    yeet.play();
-    background(0, 255, 0);
-  }
+  var s = createSprite(mouseX, mouseY, 30, 30);
+  s.velocity.x = random(-3, 3);
+  s.velocity.y = random(-3, 3);
+  yeet.play();
 }
