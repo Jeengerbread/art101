@@ -9,8 +9,12 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(710, 200);
+  createCanvas(800, 800);
   background(255);
+}
+
+function draw() {
+  drawSprites();
 }
 
 function mousePressed() {
