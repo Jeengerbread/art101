@@ -1,22 +1,32 @@
 // JavaScript Document
-let clickSound;
-let clackSound;
-let hornSound;
 let creepySound;
+let thunderSound;
+let rainSound;
+let bandSound;
+
 let forestVid;
 let soundImg;
+let thunderImg;
+let rainBackground;
+
 let soundButton;
+let thunderButton;
+
 var sprites = [];
 var mgr;
 
 function preload() {
-  click = loadSound('../../sounds/yeet.mp3');
-  clack = loadSound('../../sounds/horn.mp3');
-  creepySound = loadSound('../../sounds/forest.aac');
-  soundImg = loadImage('sound.jpg');
+  creepySound = loadSound('forest.mp3');
+  thunderSound = loadSound('thunder.mp3')
+  rainSound = loadSound('rain.mp3');
+  bangSound = loadSound('bang.mp3');
+
   forestVid = createVideo(['https://dl.dropboxusercontent.com/s/f6d7w28jz60zagp/Forest.mp4?dl=1',
                         'https://dl.dropboxusercontent.com/s/ziu0ihow3i1diuo/Forest.webm?dl=1']);
   forestVid.hide();
+  soundImg = loadImage('sound.jpg');
+  thunderImg = loadImage('thunder.png');
+  rainBackground = loadImage('rainbackground.jpg');
 }
 
 function setup() {
@@ -25,21 +35,10 @@ function setup() {
   mgr = new SceneManager();
   mgr.addScene ( welcome);
   mgr.addScene ( rainSounds );
-  mgr.addScene ( asmr );
   mgr.addScene ( forest );
 
   mgr.showScene( welcome );
 
-  soundButton = createSprite(100, 100, 20, 20);
-  soundButton.mouseActive = true;
-  soundButton.onMousePressed = function() {
-    if (creepySound.isPlaying()) {
-      creepySound.pause();
-    }
-    else {
-      creepySound.play();
-    }
-  }
 }
 
 function draw() {
@@ -52,12 +51,9 @@ function keyPressed() {
     mgr.showScene( rainSounds );
     break;
     case '2':
-    mgr.showScene( asmr );
-    break;
-    case '3':
     mgr.showScene( forest );
     break;
-    case '4':
+    case '3':
     mgr.showScene( welcome );
     break;
   }
@@ -72,14 +68,25 @@ function welcome() {
   this.enter = function() {
     background(21, 58, 203);
     forestVid.hide();
+    rainSound.stop();
     if (soundButton) {
+      creepySound.stop();
       soundButton.remove();
+    }
+    if (thunderButton) {
+      thunderSound.stop();
+      thunderButton.remove();
     }
   }
 
   this.draw = function () {
+    textAlign(CENTER);
     textSize(width / 20);
-    text("Welcome", width / 4, height / 2);
+    text("Welcome", width / 2, height / 4);
+    textSize(24);
+    text("Press 1 for a relaxing experience. Press 2 for a creepy experience. Press 3 to return home.",
+          width  / 2, height - 100);
+    text("Click anywhere for fireworks.", width / 2, height - 50);
     background(21, 58, 203, 30);
     drawSprites();
   }
@@ -91,27 +98,32 @@ function welcome() {
       sprites[i].velocity.x = random(-5, 5);
       sprites[i].velocity.y = random(-5, 5);
     }
+    bangSound.play();
   }
 }
 
 function rainSounds() {
   this.enter = function() {
-
+    forestVid.stop();
+    forestVid.hide();
+    image(rainBackground, 0, 0, width, height);
+    if (soundButton) {
+      creepySound.stop();
+      soundButton.remove();
+    }
+    thunderButton = createSprite(width/2, 100, 30, 30)
+    thunderButton.mouseActive = true;
+    thunderButton.onMousePressed = function() {
+      thunderSound.play();
+    }
+    thunderButton.addImage(thunderImg);
+    rainSound.play();
+    thunderSound.play();
   }
 
   this.draw = function () {
-
-  }
-
-  this.mousePressed = function() {
-
-  }
-}
-
-function asmr() {
-
-  this.draw = function() {
-
+    image(rainBackground, 0, 0, width, height);
+    drawSprites();
   }
 
   this.mousePressed = function() {
@@ -127,8 +139,22 @@ function forest() {
       }
     }
     forestVid.play();
+    rainSound.stop();
+    soundButton = createSprite(100, 100, 20, 20);
+    soundButton.mouseActive = true;
+    soundButton.onMousePressed = function() {
+      if (creepySound.isPlaying()) {
+        creepySound.pause();
+      }
+      else {
+        creepySound.play();
+      }
+    }
     soundButton.addImage(soundImg);
-    creepySound.loop();
+    if (thunderButton) {
+      thunderSound.stop();
+      thunderButton.remove();
+    }
   }
 
   this.draw = function () {

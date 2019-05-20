@@ -28,10 +28,10 @@ function setup() {
 function draw() {
   background(32);
   sizeDetermination();
-  
+
   for (var particleA = 0; particleA < mass.length; particleA++) {
     var accelerationX = 0, accelerationY = 0;
-    
+
     for (var particleB = 0; particleB < mass.length; particleB++) {
       if (particleA != particleB) {
         var distanceX = positionX[particleB] - positionX[particleA];
@@ -45,15 +45,15 @@ function draw() {
         accelerationY += force * distanceY;
       }
     }
-    
+
     velocityX[particleA] = velocityX[particleA] * 0.99 + accelerationX * mass[particleA];
     velocityY[particleA] = velocityY[particleA] * 0.99 + accelerationY * mass[particleA];
   }
-  
+
   for (var particle = 0; particle < mass.length; particle++) {
     positionX[particle] += velocityX[particle];
     positionY[particle] += velocityY[particle];
-    
+
     ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
   }
 }
@@ -74,7 +74,7 @@ function sizeDetermination() {
   var secondChanged = false;
   var minuteChanged = false;
   var hourChanged = false;
-	
+
   if (secondTemp != storedSecond) {
 	  if (secondTemp == 0){
 		  mass = [];
@@ -95,7 +95,7 @@ function sizeDetermination() {
 	  }
 	  storedSecond = secondTemp;
   }
-	
+
   if (minuteTemp != storedMinute) {
 	  if (minuteTemp == 0){
 		  mass = [];
@@ -116,7 +116,7 @@ function sizeDetermination() {
 	  }
 	  storedMinute = minuteTemp;
   }
-	
+
   if (hourTemp != storedHour) {
 	  if (hourTemp == 0){
 		  mass = [];
@@ -137,5 +137,5 @@ function sizeDetermination() {
 	  }
 	  storedHour = hourTemp;
   }
-  
+
 }

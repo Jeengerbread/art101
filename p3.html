@@ -3,6 +3,7 @@
 
   <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
+  <script language="javascript" type="text/javascript" src="lib/p5.min.js"></script>
   <title>Art 101</title>
   <meta name="description" content="">
   <meta name="author" content="">
@@ -13,8 +14,8 @@
   <!-- FONT ––––––––––––––––––––––––––––––––––––––––------–––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->  
-  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>                   <script type="text/javascript" src="css/overlaypopup.js"> </script>  
+  <!-- CSS & JS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>                   <script type="text/javascript" src="css/overlaypopup.js"> </script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/overlaypopup.css" />
@@ -29,7 +30,7 @@
 <!-- NAVIGATION AT the TOP is Here-->
 
 <nav class="navbar">
-      <div class="container nav_pad">  
+      <div class="container nav_pad">
         <ul>
          <li><a class="navbar-link" href="index.html"> Home</a></li>
          <li><a class="navbar-link" href="p1.html"> Project 1</a></li>
@@ -38,7 +39,7 @@
 	     <li><a class="navbar-link" href="p4.html"> Project 4</a></li>
 		 <li><a class="navbar-link" href="p5.html"> Project 5</a></li>
         </ul>
-      </div>     
+      </div>
 </nav>
 
 
@@ -46,112 +47,253 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="container">
 
-  
+
    <div class="row section">
   <header id="header" class="twelve columns">
     <h3>Project 3: Visualizing Time</h3>
-      
-<div class="statement_text"> 
+
+<div class="statement_text">
 <em>
-Life is like a tangled ball of wool. At the beginning there is nothing, and at the end there is nothing. -Saadi Shirazi
+  Life’s but a walking shadow, a poor player
+  that struts and frets his hour upon the stage,
+  and then is heard no more. It is a tale
+  told by an idiot, full of sound and fury,
+  signifying nothing.  - William Shakespeare
 </em>
 <br>
 
 </div>
-    
+
   </header>
   </div>
 
-     
+
 <!-- NOTE!: For each row section make sure your column divs add up to 12. so 4+8, 6+6, 2+10, etc.-->
 
-     
-      
+
+
        <!-- Start Row //// -->
       <div class="row section">
 
-      
+
        <!-- The column for showing the image and the link-->
-      
+
       <div class="four columns" >
-      
-	    <a href="P5/p3ex5/exercise5.html" > <img src="images/p1ex2.png" class="u-full-width "/>   </a>
-      </div> 
-        
+
+	    <a href="P5/p3ex5/exercise5.html" > <img src="images/p3ex5.png" class="u-full-width "/>   </a>
+      </div>
+
        <!-- The column for artist statement and the link-->
-     <div class="eight columns">    
+     <div class="eight columns">
          <h5> Exercise 5</h5>
 		<p>
 		In this exercise I converted my Processing sketch into a P5.js script so it can run in a web browser.
-         </p> 
-        <!--  <a class="show-popup" href="#" data-showpopup="1" >run sketch</a> -->
+         </p>
+         <a class="show-popup" href="#" data-showpopup="2" >run sketch</a> <br>
          <a href="video/" >play video</a> <br>
          <a href="P5/p3ex5/exercise5.js">see code</a> <br>
      </div>
-     
-     
+
+
      <!--////  End of row section-->
     </div>
 
-      
-
-      
         <div class="row section">
 
-      
+
        <!-- The column for showing the image and the link-->
-      
+
       <div class="four columns" >
-      
-	    <a href="P5/p3/p3.html" > <img src="images/p1.png" class="u-full-width"/>   </a>
-      </div> 
-        
+
+	    <a href="P5/p3/p3.html" > <img src="images/p3.png" class="u-full-width"/>   </a>
+      </div>
+
        <!-- The column for artist statement and the link-->
-     <div class="eight columns">    
+     <div class="eight columns">
          <h5> Project 3</h5>
 		 <p>
-			(placeholder) <br>    
-         </p> 
-        <!--  <a class="show-popup" href="#" data-showpopup="1" >run sketch</a> -->
-         <a href="video/p1.mp4" >play video</a> <br>
+			(placeholder) <br>
+         </p>
+         <a class="show-popup" href="#" data-showpopup="1" >run sketch</a> <br>
          <a href="P5/p3/p3.js">see code</a> <br>
-         
-  
-     </div>
-     
-     
-     <!--////  End of row section-->
-    </div> 
-      
-  
 
-   
-   
+
+     </div>
+
+
+     <!--////  End of row section-->
+    </div>
+
+
+
+
+
    <!-- end of MAIN container /////////////////-->
-   
+
   </div>
 
-    
-	
-	
+
+
+
 	<!-- ///////START of Overlay and pops for videos ///////////////////////////////////////////////////////////////// -->
-	
+
 <div class="overlay-bg"> </div>
-    
-    <div class="overlay-content popup1">
-    
-    <!--   sketch content here///////////////// -->
-  
-    
+
+    <div id="p3sketch" class="overlay-content popup1">
+      <script src="P5/p3/p3.js" ></script>
+
     <button class="close-btn">X</button>
 </div>
-    
-    <div class="overlay-content popup2">
-    
-	  <!-- sketch content here/////////////////-->
-    
+
+      <div id="p3ex5sketch" class="overlay-content popup2">
+      <script>
+      var mass = [];
+      var positionX = [];
+      var positionY = [];
+      var velocityX = [];
+      var velocityY = [];
+      var storedSecond = 0;
+      var storedMinute = 0;
+      var storedHour = 0;
+
+      function setup() {
+        var canvas = createCanvas(1000, 1000);
+        canvas.parent('p3sketch');
+        noStroke();
+        fill(245, 140, 35, 192);
+        storedSecond = second();
+        storedMinute = minute();
+        storedHour = hour();
+        for (var particle = 0; particle < storedSecond; particle++){
+        	addNewParticle(0.003);
+        }
+        for (var particle = 0; particle < storedMinute; particle++){
+        	addNewParticle(0.009);
+        }
+        for (var particle = 0; particle < storedHour; particle++){
+        	addNewParticle(0.03);
+        }
+      }
+
+      function draw() {
+        background(32);
+        sizeDetermination();
+
+        for (var particleA = 0; particleA < mass.length; particleA++) {
+          var accelerationX = 0, accelerationY = 0;
+
+          for (var particleB = 0; particleB < mass.length; particleB++) {
+            if (particleA != particleB) {
+              var distanceX = positionX[particleB] - positionX[particleA];
+              var distanceY = positionY[particleB] - positionY[particleA];
+
+              var distance = sqrt(distanceX * distanceX + distanceY * distanceY);
+              if (distance < 1) distance = 1;
+
+              var force = (distance - 320) * mass[particleB] / distance;
+              accelerationX += force * distanceX;
+              accelerationY += force * distanceY;
+            }
+          }
+
+          velocityX[particleA] = velocityX[particleA] * 0.99 + accelerationX * mass[particleA];
+          velocityY[particleA] = velocityY[particleA] * 0.99 + accelerationY * mass[particleA];
+        }
+
+        for (var particle = 0; particle < mass.length; particle++) {
+          positionX[particle] += velocityX[particle];
+          positionY[particle] += velocityY[particle];
+
+          ellipse(positionX[particle], positionY[particle], mass[particle] * 1000, mass[particle] * 1000);
+        }
+      }
+
+      function addNewParticle(x) {
+        size = x;
+        mass.push(size);
+        positionX.push(random(1000));
+        positionY.push(random(1000));
+        velocityX.push(0);
+        velocityY.push(0);
+      }
+
+      function sizeDetermination() {
+        var secondTemp = second();
+        var minuteTemp = minute();
+        var hourTemp = hour();
+        var secondChanged = false;
+        var minuteChanged = false;
+        var hourChanged = false;
+
+        if (secondTemp != storedSecond) {
+      	  if (secondTemp == 0){
+      		  mass = [];
+      		  positionX = [];
+      		  positionY = [];
+      		  velocityX = [];
+      		  velocityY = [];
+      		  for (var particle = 0; particle < minuteTemp; particle++){
+      			  addNewParticle(0.009);
+      		  }
+      		  for (var particle = 0; particle < hourTemp; particle++){
+      			  addNewParticle(0.03);
+      		  }
+      		  secondChanged = true;
+      	  }
+      	  else if (minuteChanged != true && hourChanged != true) {
+      		  addNewParticle(0.003);
+      	  }
+      	  storedSecond = secondTemp;
+        }
+
+        if (minuteTemp != storedMinute) {
+      	  if (minuteTemp == 0){
+      		  mass = [];
+      		  positionX = [];
+      		  positionY = [];
+      		  velocityX = [];
+      		  velocityY = [];
+      		  for (var particle = 0; particle < secondTemp-1; particle++){
+      			  addNewParticle(0.003);
+      		  }
+      		  for (var particle = 0; particle < hourTemp; particle++){
+      			  addNewParticle(0.03);
+      		  }
+      		  minuteChanged = true;
+      	  }
+      	  else if (secondChanged != true && hourChanged != true){
+      		  addNewParticle(0.009);
+      	  }
+      	  storedMinute = minuteTemp;
+        }
+
+        if (hourTemp != storedHour) {
+      	  if (hourTemp == 0){
+      		  mass = [];
+      		  positionX = [];
+      		  positionY = [];
+      		  velocityX = [];
+      		  velocityY = [];
+      		  for (var particle = 0; particle < secondTemp; particle++){
+      			  addNewParticle(0.003);
+      		  }
+      		  for (var particle = 0; particle < minuteTemp; particle++){
+      			  addNewParticle(0.009);
+      		  }
+      		  hourChanged = true;
+      	  }
+      	  else if (secondChanged != true && minuteChanged != true) {
+      		  addNewParticle(0.03);
+      	  }
+      	  storedHour = hourTemp;
+        }
+
+      }
+
+      </script>
+
     <button class="close-btn">X</button>
 </div>
-    
+
 </body>
 </html>

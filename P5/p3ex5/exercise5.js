@@ -7,13 +7,14 @@ var speedY = new Array(count);
 var sizeW = new Array(count);
 var sizeH = new Array(count);
 var colors = new Array(count);
-var red = new Array(count);
-var green = new Array(count);
-var blue = new Array(count);
+var red1 = new Array(count);
+var green1 = new Array(count);
+var blue1 = new Array(count);
 var shape = new Array(count);
 
 function setup() {
-  createCanvas(600, 600);
+  var canvas = createCanvas(600, 600);
+  canvas.parent('p3ex5sketch');
   for (var i=0; i < posX.length; i++) {
     posX[i] = width/2;
     posY[i] = height/2;
@@ -22,9 +23,9 @@ function setup() {
     sizeW[i] = random(20, 25);
     sizeH[i] = random(20, 100);
     colors[i] = int(random(0, 255));
-    red[i] = int(random(0, 255));
-    green[i] = int(random(0, 255));
-    blue[i] = int(random(0, 255));
+    red1[i] = int(random(0, 255));
+    green1[i] = int(random(0, 255));
+    blue1[i] = int(random(0, 255));
     shape[i] = int(random(0,3));
   }
 }
@@ -38,7 +39,7 @@ function draw() {
     posX[i] += speedX[i];
     posY[i] += speedY[i];
     //draw all balls
-    fill(red[i], green[i], blue[i]);
+    fill(red1[i], green1[i], blue1[i]);
     if (shape[i] == 0) {
       ellipse(posX[i], posY[i], sizeW[i], sizeW[i]);
     }
