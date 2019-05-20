@@ -76,7 +76,7 @@ function rainSounds()
 		background(18,67,255);
 		var sprites = [];
 		for (var i = 0; i < 10; i++){
-			var sprites[i] = createSprite(mouseX, mouseY, 5, 5);
+			sprites[i] = createSprite(mouseX, mouseY, 5, 5);
   			sprites[i].velocity.x = random(-5, 5);
   			sprites[i].velocity.y = random(-5, 5);
 		}
